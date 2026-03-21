@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import {LoginPopupPage} from "../../pages/loginPopupPage/loginPopupPage";
 import {MainPage} from "../../pages/mainPage/mainPage";
 
-test.describe("Проверки попапа сс авторизацией", () => {
+test.describe("Проверки поп апа с авторизацией", () => {
     test("переход на регистрацию по кнопке", async ({ page }) => {
         //arrange
         const loginPopup = new LoginPopupPage(page);
