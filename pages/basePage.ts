@@ -13,7 +13,7 @@ export abstract class BasePage {
     async waitForOpen() {
         await expect(
             this.root(),
-            `Страница ${this.pageName} не открылась`)
+            `Страница ${this.pageName} открылась`)
             .toBeVisible();
     }
 

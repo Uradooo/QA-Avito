@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 import {LoginPopupPage} from "../../pages/loginPopupPage/loginPopupPage";
 import {MainPage} from "../../pages/mainPage/mainPage";
 
-test.describe("Проверки попапа сс авторизацией", () => {
+test.describe("Проверки поп апа с авторизацией", () => {
     test("переход на регистрацию по кнопке", async ({ page }) => {
         //arrange
         const loginPopup = new LoginPopupPage(page);
@@ -14,7 +14,7 @@ test.describe("Проверки попапа сс авторизацией", () 
         await loginPopup.clickRegisterBtn();
 
         //assert
-        await expect(page).toHaveURL("/authRegistration");
+        await expect(page).toHaveURL("/auth/register");
     });
 
     test("логин с пустыми полями не должен увести на главную", async ({ page }) => {

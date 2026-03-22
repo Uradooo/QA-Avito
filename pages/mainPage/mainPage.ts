@@ -11,6 +11,8 @@ export class MainPage extends BasePage {
     readonly myAdsBtn: Locator;
     readonly userMenuBtn: Locator;
     readonly loginModal: Locator;
+    readonly searchInput: Locator;
+    readonly createAdButton: Locator; 
 
     constructor(page: Page) {
         super(page);
@@ -21,6 +23,8 @@ export class MainPage extends BasePage {
         this.myAdsBtn = page.locator("[data-marker=\"my-ads-link\"]");
         this.userMenuBtn = page.locator("[data-marker=\"user-menu-button\"]");
         this.loginModal = page.locator("[data-marker=\"login-modal-content\"]");
+        this.searchInput = page.locator("[data-marker=\"search-input\"]");
+        this.createAdButton = page.locator("[data-marker=\"create-ad-button\"]");
     }
 
     protected root(): Locator {
@@ -50,4 +54,14 @@ export class MainPage extends BasePage {
             .toBeVisible();
     }
 
+    async search(query: string) {
+        await this.searchInput.fill(query);
+        await this.searchInput.press("Enter");
+    }
+
+    /**Открыть страницу создания объявления
+     */
+    async openCreateAdPage() {
+        await this.createAdButton.click();
+    }
 }
