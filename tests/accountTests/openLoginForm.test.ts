@@ -14,7 +14,7 @@ test.describe("Проверки поп апа с авторизацией", () =
         await loginPopup.clickRegisterBtn();
 
         //assert
-        await expect(page).toHaveURL("/authRegistration");
+        await expect(page).toHaveURL("/auth/register");
     });
 
     test("логин с пустыми полями не должен увести на главную", async ({ page }) => {
